@@ -1,0 +1,11 @@
+  read_own:
+    image: reader
+    container_name: reader_own
+    restart: always
+    ports:
+      - 4395:8080
+    volumes:
+      - /home/reader/logs:/logs
+      - /home/reader/storage:/storage
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
