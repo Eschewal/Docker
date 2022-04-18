@@ -1,0 +1,11 @@
+monit:
+  image: docker-webui
+  ports:
+    - '9000:9000'
+  volumes:
+    - ./:/etc/docker-compose/cert
+  environment:
+    - DOCKER_HOST
+    - DOCKER_CERT_PATH=/etc/docker-compose/cert
+    - APP_LABEL_OVERRIDE_NAMES=com.docker.compose.service
+    - APP_LABEL_FILTERS=com.docker.compose.service
